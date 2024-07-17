@@ -21,7 +21,7 @@
   },
   "Use Custom Window Title" : true,
   "Right Option Key Sends" : 0,
-  "Show Status Bar" : true,
+  "Show Status Bar" : false,
   "Character Encoding" : 4,
   "Selection Color" : {
     "Green Component" : 0.76078431372549016,
@@ -108,9 +108,6 @@
         "class" : "iTermStatusBarSnippetMenuComponent",
         "configuration" : {
           "knobs" : {
-            "base: compression resistance" : 1,
-            "maxwidth" : 1.7976931348623157e+308,
-            "base: priority" : 5,
             "shared background color" : {
               "Red Component" : 0.14117647058823529,
               "Color Space" : "sRGB",
@@ -118,6 +115,9 @@
               "Alpha Component" : 1,
               "Green Component" : 0.19607843137254902
             },
+            "maxwidth" : 1.7976931348623157e+308,
+            "base: priority" : 5,
+            "minwidth" : "0",
             "shared text color" : {
               "Red Component" : 0.89999997615814209,
               "Color Space" : "sRGB",
@@ -125,7 +125,7 @@
               "Alpha Component" : 1,
               "Green Component" : 0.89999997615814209
             },
-            "minwidth" : "0"
+            "base: compression resistance" : 1
           },
           "layout advanced configuration dictionary value" : {
             "separator color 2" : {
@@ -313,7 +313,7 @@
     "Blue Component" : 1,
     "Red Component" : 1
   },
-  "Custom Window Title" : "  ",
+  "Custom Window Title" : " ",
   "Unlimited Scrollback" : false,
   "Custom Command" : "No",
   "AWDS Tab Option" : "No",
@@ -516,9 +516,11 @@
   },
   "Default Bookmark" : "No",
   "Cursor Color" : {
-    "Green Component" : 0.72156862745098038,
-    "Blue Component" : 0.76470588235294112,
-    "Red Component" : 0.70196078431372544
+    "Red Component" : 0,
+    "Color Space" : "sRGB",
+    "Blue Component" : 0,
+    "Alpha Component" : 1,
+    "Green Component" : 1
   },
   "Ansi 1 Color" : {
     "Green Component" : 0.16678813099861145,
