@@ -4,6 +4,7 @@
 <summary><strong>APPS TO INSTALL</strong></summary>
 
 - [iTerm2](https://iterm2.com/downloads.html)
+- [Hyper](https://hyper.is)
 </details>
 
 ---
@@ -47,8 +48,8 @@ $ brew install aws-rotate-key
 ```bash
 # Setup dev folder '~/development'
 $ cd ~
-$ mkdir development
-$ cd development
+$ mkdir _dev
+$ cd _dev
 
 # Copy prefs from my github
 $ git clone https://github.com/ErikHolman/Erik-Holman-the-Dotfiles.git
