@@ -1,19 +1,9 @@
 # ===============================================
 #
 # 	Erik Holman: the .zshrc
-#	Last Change: 9/12/24
+#	Last Change: 9/13/24
 #
 # ===============================================
-
-
-# Powerlevel10k =================================
-# 
-# 	instant prompt, keep at top of ~/.zshrc
-#
-# ===============================================
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 
 # Oh My Zsh =====================================
@@ -22,8 +12,8 @@ fi
 #	ZSH_THEME	See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #
 # ===============================================
-export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="gozilla"
+export ZSH="/Users/erikholman/.oh-my-zsh"
+ZSH_THEME="agnoster"
 
 
 # OMZ Updates ===================================
@@ -44,29 +34,27 @@ zstyle ':omz:update' mode reminder
 #
 #	https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git
 #	https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/thefuck
-#	https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/tmux
 #	https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/python
+#	https://github.com/zsh-users/zsh-syntax-highlighting
 #
 #	Source the shell to confirm all is well
 #
 # ===============================================
 eval "$(thefuck --alias)"
-plugins=(git thefuck tmux python)
+plugins=(git thefuck python zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 
-# Erik's Special Place ==========================
+# OhMyPosh ======================================
 #
-#	export			Special exports unique to my workflow
-#	prompt_context	Forces USER export
+#	Init for Oh My Posh, default theme
+#	Disable OMP in standard terminal - MacOS only
 #
 # ===============================================
-export USER='erikholman'
-prompt_context() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    prompt_segment black default "%(!.%{%F{yellow}%}.)$USER"
-  fi
-}
+eval "$(oh-my-posh init zsh --config ~/.omp.toml)"
+if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
+  eval "$(oh-my-posh init zsh)"
+fi
 
 
 # Node Version Manager ==========================
