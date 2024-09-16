@@ -1,7 +1,7 @@
 " Intro =========================================
 "
 "	Erik Holman: the .vimrc
-"	Last Change: 9/12/2024
+"	Last Change: 9/16/2024
 "	
 " ===============================================
 
@@ -76,24 +76,13 @@ set laststatus=2
 "	cursorline		Visual cue for the current line
 "	antialias		Font fix for MacOSX
 "	termguicolors	Use my defined highlights
-"	hi				Highlighting
-"					-see https://vimhelp.org/options.txt.html#%27highlight%27
+"	colorscheme		Theme is currently: https://github.com/catppuccin/vim
 "
 " ===============================================
 set cursorline
 set antialias
 set termguicolors
-hi clear
-hi CursorLine guibg=Grey30
-hi CursorLineNr term=bold guifg=black guibg=white
-hi LineNrAbove guibg=Grey20 guifg=Grey40
-hi LineNrBelow guibg=Grey20 guifg=Grey40
-hi ModeMsg guifg=black guibg=green
-hi ModeMsg guifg=black guibg=green
-hi NonText term=bold guibg=black guifg=Orange
-hi Normal guibg=black
-hi StatusLine guifg=darkblue guibg=white
-hi StatusLineNC guifg=black guibg=Grey30
+colorscheme catppuccin_mocha
 
 " My Keymapping =================================
 " 	
