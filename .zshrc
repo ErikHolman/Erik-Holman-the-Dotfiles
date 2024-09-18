@@ -1,7 +1,7 @@
 # ===============================================
 #
 # 	Erik Holman: the .zshrc
-#	Last Change: 9/13/24
+#	Last Change: 9/18/24
 #
 # ===============================================
 
@@ -51,9 +51,8 @@ source $ZSH/oh-my-zsh.sh
 #	Disable OMP in standard terminal - MacOS only
 #
 # ===============================================
-eval "$(oh-my-posh init zsh --config ~/.omp.toml)"
 if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-  eval "$(oh-my-posh init zsh)"
+	eval "$(oh-my-posh init zsh --config ~/catppuccin_mocha.omp.json)"
 fi
 
 
