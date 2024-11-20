@@ -1,7 +1,7 @@
 // About ========================================
 //
 //		Erik Holman: the Oh My Posh JSON
-//		Last Change: 9/17/24
+//		Last Change: 11/20/24
 //
 // ==============================================
 {
@@ -20,7 +20,7 @@
 							{
 										"foreground": "p:blue",
 										"style": "plain",
-										"template": "⼰ ",
+										"template": "📂 " ,
 										"type": "session"
 								},
 								{
