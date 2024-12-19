@@ -1,7 +1,7 @@
 # ===============================================
 #
 # 	Erik Holman: the .zshrc
-#	Last Change: 9/18/24
+#	Last Change: 12/02/24
 #
 # ===============================================
 
@@ -69,6 +69,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+
+# Python Environment Manager ====================
+#
+# 	pyenv [command]
+# 	pyenv --verision
+#
+# ===============================================
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"	
 
 # Postgress =====================================
 #
