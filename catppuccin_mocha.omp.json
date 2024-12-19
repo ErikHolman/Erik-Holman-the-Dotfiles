@@ -1,74 +1,76 @@
-// About ========================================
-//
-//		Erik Holman: the Oh My Posh JSON
-//		Last Change: 11/20/24
-//
-// ==============================================
 {
-		"$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-		"palette": {
-				"os": "#ACB0BE",
-				"closer": "p:os",
-				"pink": "#F5C2E7",
-				"lavender": "#B4BEFE",
-				"blue":  "#89B4FA"
-		},
-		"blocks": [
-				{
-						"alignment": "left",
-						"segments": [
-							{
-										"foreground": "p:blue",
-										"style": "plain",
-										"template": "📂 " ,
-										"type": "session"
-								},
-								{
-										"foreground": "p:pink",
-										"properties": {
-												"folder_icon": "..\ue5fe..",
-												"home_icon": "~",
-												"style": "agnoster_short"
-										},
-										"style": "plain",
-										"template": "{{ .Path }} ",
-										"type": "path"
-								},
-								{
-										"type": "git",
-										"style": "plain",
-										"foreground": "p.blue",
-										"background_templates": [
-												"{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }}",
-												"{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{ end }}",
-												"{{ if gt .Ahead 0 }}{{ end }}",
-												"{{ if gt .Behind 0 }}{{ end }}"
-										],
-										"template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }}",
-										"properties": {
-												"fetch_status": true,
-												"fetch_upstream_icon": true,
-												"untracked_modes": {
-														"/Users/user/Projects/oh-my-posh/": "no"
-												},
-												"source": "cli",
-												"mapped_branches": {
-														"feat/*": "🚀 ",
-														"bug/*": "🐛 ",
-														"main": "⛺️"
-												}
-										}
-								},
-								{
-										"style": "plain",
-										"foreground": "p:blue",
-										"template": " $",
-										"type": "text"
-								}
-						],
-						"type": "prompt"
-				}
-		],
-		"final_space": true,
-		"version": 2
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "blue": "#89B4FA",
+        "closer": "p:os",
+        "lavender": "#B4BEFE",
+        "os": "#ACB0BE",
+        "pink": "#F5C2E7"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "properties": {
+                        "cache_duration": "none"
+                    },
+                    "template": "📂 ",
+                    "foreground": "p:blue",
+                    "type": "session",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "folder_icon": "..\ue5fe..",
+                        "home_icon": "~",
+                        "style": "agnoster_short"
+                    },
+                    "template": "{{ .Path }} ",
+                    "foreground": "p:pink",
+                    "type": "path",
+                    "style": "plain"
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none",
+                        "fetch_status": true,
+                        "fetch_upstream_icon": true,
+                        "mapped_branches": {
+                            "bug/*": "🐛 ",
+                            "feat/*": "\ud83d\ude80 ",
+                            "main": "⛺\ufe0f"
+                        },
+                        "source": "cli",
+                        "untracked_modes": {
+                            "/Users/user/Projects/oh-my-posh/": "no"
+                        }
+                    },
+                    "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf0c7 {{ .StashCount }}{{ end }}",
+                    "foreground": "p.blue",
+                    "type": "git",
+                    "style": "plain",
+                    "background_templates": [
+                        "{{ if or (.Working.Changed) (.Staging.Changed) }}{{ end }}",
+                        "{{ if and (gt .Ahead 0) (gt .Behind 0) }}{{ end }}",
+                        "{{ if gt .Ahead 0 }}{{ end }}",
+                        "{{ if gt .Behind 0 }}{{ end }}"
+                    ]
+                },
+                {
+                    "properties": {
+                        "cache_duration": "none"
+                    },
+                    "template": " $",
+                    "foreground": "p:blue",
+                    "type": "text",
+                    "style": "plain"
+                }
+            ]
+        }
+    ],
+    "version": 3,
+    "final_space": true
 }
